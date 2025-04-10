@@ -46,22 +46,23 @@ class TestCalculator(unittest.TestCase):
     # ##########################
     
     ####### Partner 1
-    def test_log_invalid_argument(a,b): # 1 assertion
-        if a <= 0 or a == 1:
-            raise ValueError("Base 'a' must be positive and not equal to 1.")
-        if b <= 0:
-            raise ValueError("Argument 'b' must be positive.")
-        return math.log(b, a)
+    def test_log_invalid_argument(self): # 1 assertion
+        with self.assertRaises(ValueError):
+            logarithm(0, 5)  # Invalid base (0)
 
 
-    def test_hypotenuse(a,b): # 3 assertions
-        return math.sqrt(a ** 2 + b ** 2)
+
+    def test_hypotenuse(self):
+        self.assertEqual(hypotenuse(3, 4), 5.0)             # 3-4-5 triangle
+        self.assertEqual(hypotenuse(5, 12), 13.0)           # 5-12-13 triangle
+        self.assertAlmostEqual(hypotenuse(1.5, 2.5), math.sqrt(1.5**2 + 2.5**2), places=6)  # float input
 
 
-    def test_sqrt(x): # 3 assertions
-        if x < 0:
+
+    def test_sqrt(self): # 3 assertions
+        if self < 0:
             raise ValueError("Cannot take square root of negative number.")
-        return math.sqrt(x)
+        return math.sqrt(self)
     ##########################
 
 # Do not touch this
