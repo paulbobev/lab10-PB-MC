@@ -37,7 +37,7 @@ class TestCalculator(unittest.TestCase):
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
         with self.assertRaises(ZeroDivisionError):
-            div(0, 5)
+            div(5,0)
 
     def test_logarithm(self): # 3 assertions
         self.assertAlmostEqual(logarithm(10, 100), 2.0)
@@ -66,10 +66,11 @@ class TestCalculator(unittest.TestCase):
 
 
     def test_sqrt(self): # 3 assertions
-        if self < 0:
-            raise ValueError("Cannot take square root of negative number.")
-        return math.sqrt(self)
-    ##########################
+        with self.assertRaises(ValueError):
+            square_root(-4)
+        self.assertEqual(square_root(0), 0.0)
+        self.assertEqual(square_root(16), 4.0)
+        ##########################
 
 # Do not touch this
 if __name__ == "__main__":
