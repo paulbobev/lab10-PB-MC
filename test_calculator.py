@@ -1,3 +1,9 @@
+#https://github.com/paulbobev/lab10-PB-MC.git
+# Partner 1: Paul Bobev
+# Partner 2: Mia Ciceri
+
+
+
 import unittest
 from calculator import *
 
@@ -53,7 +59,7 @@ class TestCalculator(unittest.TestCase):
 
 
     def test_sqrt(x): # 3 assertions
-        if self < 0:
+        if x < 0:
             raise ValueError("Cannot take square root of negative number.")
         return math.sqrt(x)
     ##########################

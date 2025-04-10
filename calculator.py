@@ -1,3 +1,6 @@
+#https://github.com/paulbobev/lab10-PB-MC.git
+# Partner 1: Paul Bobev
+# Partner 2: Mia Ciceri
 """
 calculator.py
 - Defines functions used to create a simple calculator
